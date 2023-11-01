@@ -1,0 +1,51 @@
+:root {
+  --color-brand: #1c9878;
+}
+* {
+  box-sizing: border-box;
+}
+#root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+nav {
+  flex: 1;
+  min-height: 70px;
+}
+main {
+  flex: 1 0 auto;
+}
+
+.md-editor {
+  margin: 1rem;
+  border: 1px solid #ccc;
+  min-height: 350px;
+}
+
+.color-brand {
+  color: var(--color-brand);
+}
+
+.bg-brand {
+  background-color: var(--color-brand);
+}
+
+button[data-testid="close-button"] {
+  background-color: unset;
+}
+.d-flex {
+  display: flex;
+}
+@media (max-width: 600px) {
+  .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .col {
+    width: 100%;
+  }
+}
