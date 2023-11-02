@@ -62,8 +62,6 @@ export const Write = () => {
     }
   }, []);
 
-  console.log(postContent);
-
   return (
     <div className="container center">
       <MarkdownEditor

@@ -1,7 +1,6 @@
 import MarkdownEditor from "@uiw/react-markdown-editor";
 
 export const PostCard = ({ post }: any) => {
-  console.log(post);
   return (
     <div className="card">
       <div className="card-image">

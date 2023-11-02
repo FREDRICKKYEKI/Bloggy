@@ -18,42 +18,75 @@ export const NavBar = () => {
     }
   }
   return (
-    <div className="navbar-fixed">
-      <nav style={{ height: "70px" }} className="black">
-        <div className="nav-wrapper container">
-          <a style={{ marginTop: "0.5rem" }} href="/" className="brand-logo">
-            <BrandIcon variant="sm" />
-            Bloggy
-          </a>
-          <ul id="nav-mobile" className="right hide-on-med-and-down">
-            <li>
-              <a href={routes.blogs}>Blogs</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            {currentUser?.email ? (
-              <>
-                <li>
-                  <a
-                    href={routes.login}
-                    onClick={(e) => handleSignOut(e.nativeEvent)}
-                  >
-                    Logout
-                  </a>
-                </li>
-                <li>
-                  <WritePostButton />
-                </li>
-              </>
-            ) : (
+    <>
+      <div className="navbar-fixed">
+        <nav style={{ height: "70px" }} className="nav-extended black ">
+          <div className="nav-wrapper container">
+            <a style={{ marginTop: "0.5rem" }} href="/" className="brand-logo">
+              <BrandIcon variant="sm" />
+              Bloggy
+            </a>
+            <a href="#" data-target="mobile-demo" className="sidenav-trigger">
+              <i className="material-icons">menu</i>
+            </a>
+            <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
-                <a href={routes.login}>Login</a>
+                <a href={routes.blogs}>Blogs</a>
               </li>
-            )}
-          </ul>
-        </div>
-      </nav>
-    </div>
+              <li>
+                <a href="#">About</a>
+              </li>
+              {currentUser?.email ? (
+                <>
+                  <li>
+                    <a
+                      href={routes.login}
+                      onClick={(e) => handleSignOut(e.nativeEvent)}
+                    >
+                      Logout
+                    </a>
+                  </li>
+                  <li>
+                    <WritePostButton />
+                  </li>
+                </>
+              ) : (
+                <li>
+                  <a href={routes.login}>Login</a>
+                </li>
+              )}
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <ul className="sidenav" id="mobile-demo">
+        <li>
+          <a href={routes.blogs}>Blogs</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        {currentUser?.email ? (
+          <>
+            <li>
+              <a
+                href={routes.login}
+                onClick={(e) => handleSignOut(e.nativeEvent)}
+              >
+                Logout
+              </a>
+            </li>
+            <li>
+              <WritePostButton />
+            </li>
+          </>
+        ) : (
+          <li>
+            <a href={routes.login}>Login</a>
+          </li>
+        )}
+      </ul>
+    </>
   );
 };
