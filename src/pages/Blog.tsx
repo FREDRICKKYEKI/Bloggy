@@ -20,7 +20,7 @@ export const Blog = () => {
       style={{ marginTop: "2rem" }}
       className="container"
     >
-      <MDEditor.Markdown source={post?.content} />;
+      <MDEditor.Markdown source={post?.content} />
     </div>
   );
 };
