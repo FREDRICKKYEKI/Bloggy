@@ -15,7 +15,7 @@ export const PostCard = ({ post }: any) => {
           <h6>{post.title} </h6>
         </span>
       </div>
-      <div className="card-content">
+      <div data-color-mode="light" className="card-content">
         <MDEditor.Markdown
           source={post.description}
           style={{

@@ -15,7 +15,11 @@ export const Blog = () => {
   }, []);
 
   return (
-    <div style={{ marginTop: "2rem" }} className="container">
+    <div
+      data-color-mode="light"
+      style={{ marginTop: "2rem" }}
+      className="container"
+    >
       <MDEditor.Markdown source={post?.content} />;
     </div>
   );
