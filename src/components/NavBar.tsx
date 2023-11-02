@@ -74,6 +74,9 @@ export const NavBar = () => {
 
       <ul className="sidenav" id="slide-out">
         <li>
+          <a href={routes.home}>Home</a>
+        </li>
+        <li>
           <a href={routes.blogs}>Blogs</a>
         </li>
         <li>

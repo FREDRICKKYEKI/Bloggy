@@ -1,4 +1,4 @@
-import MarkdownEditor from "@uiw/react-markdown-editor";
+import MDEditor from "@uiw/react-md-editor";
 
 export const PostCard = ({ post }: any) => {
   return (
@@ -16,7 +16,7 @@ export const PostCard = ({ post }: any) => {
         </span>
       </div>
       <div className="card-content">
-        <MarkdownEditor.Markdown
+        <MDEditor.Markdown
           source={post.description}
           style={{
             whiteSpace: "pre-wrap",

@@ -1,8 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
-import MarkdownEditor from "@uiw/react-markdown-editor";
 import { usePosts } from "../contexts/PostsProvider";
 import { useEffect } from "react";
 import { routes } from "../utils";
+import MDEditor from "@uiw/react-md-editor";
 
 export const Blog = () => {
   const params = useParams();
@@ -16,7 +16,7 @@ export const Blog = () => {
 
   return (
     <div style={{ marginTop: "2rem" }} className="container">
-      <MarkdownEditor.Markdown source={post?.content} />;
+      <MDEditor.Markdown source={post?.content} />;
     </div>
   );
 };
