@@ -1,11 +1,15 @@
 import { useAuth } from "../contexts/AuthContext";
+import { useEffect } from "react";
 import { BrandIcon } from "./BrandIcon";
 import { routes } from "../utils";
 import { supabase } from "../App";
+// import M from "materialize-css/dist/js/materialize.min.js";
+import M from "materialize-css";
 import { WritePostButton } from "./WritePostButton";
 
 export const NavBar = () => {
   const { currentUser } = useAuth() as any;
+  const admin_tk = localStorage.getItem("admin_tk") as string;
 
   async function handleSignOut(e: Event) {
     e.preventDefault();
@@ -17,6 +21,16 @@ export const NavBar = () => {
       alert(error.message);
     }
   }
+
+  useEffect(() => {
+    try {
+      let sidenav = document.querySelector("#slide-out");
+      if (sidenav) {
+        M.Sidenav.init(sidenav, {});
+      }
+    } catch (e) {}
+  }, []);
+
   return (
     <>
       <div className="navbar-fixed">
@@ -26,7 +40,7 @@ export const NavBar = () => {
               <BrandIcon variant="sm" />
               Bloggy
             </a>
-            <a href="#" data-target="mobile-demo" className="sidenav-trigger">
+            <a href="#" data-target="slide-out" className="sidenav-trigger">
               <i className="material-icons">menu</i>
             </a>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
@@ -51,16 +65,14 @@ export const NavBar = () => {
                   </li>
                 </>
               ) : (
-                <li>
-                  <a href={routes.login}>Login</a>
-                </li>
+                <li>{admin_tk ? <a href={routes.login}>Login</a> : ""}</li>
               )}
             </ul>
           </div>
         </nav>
       </div>
 
-      <ul className="sidenav" id="mobile-demo">
+      <ul className="sidenav" id="slide-out">
         <li>
           <a href={routes.blogs}>Blogs</a>
         </li>
@@ -82,9 +94,7 @@ export const NavBar = () => {
             </li>
           </>
         ) : (
-          <li>
-            <a href={routes.login}>Login</a>
-          </li>
+          <li>{admin_tk ? <a href={routes.login}>Login</a> : ""}</li>
         )}
       </ul>
     </>
