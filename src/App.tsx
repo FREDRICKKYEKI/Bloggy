@@ -42,8 +42,22 @@ function App() {
                 </RequireAuth>
               }
             />
-            <Route path={routes.edit} element={<Write />} />
-            <Route path={routes.write_new} element={<Write />} />
+            <Route
+              path={routes.edit}
+              element={
+                <RequireAuth>
+                  <Write />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path={routes.write_new}
+              element={
+                <RequireAuth>
+                  <Write />
+                </RequireAuth>
+              }
+            />
             <Route path={routes.blog} element={<Blog />} />
             <Route path={routes.blogs} element={<Blogs />} />
             <Route path="*" element={<h1>404</h1>} />

@@ -1,11 +1,11 @@
 export const routes = {
   home: "/",
-  login: "/auth",
   blog: "/blog/:id",
-  admin: "/admin",
-  edit: "/admin/edit/:id",
-  write_new: "/admin/write/new",
   blogs: "/blogs",
+  login: "/auth", //require auth
+  admin: "/admin", //require auth
+  edit: "/admin/edit/:id", //require auth
+  write_new: "/admin/write/new", //require auth
 };
 
 // styles utils
