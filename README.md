@@ -1,27 +1,61 @@
-# React + TypeScript + Vite
+# Bloggy - A Web App for blogging
+![screenshot](images/screenshot.jpg)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+Bloggy is a modern and minimalistic blogging web application built with TypeScript and React. It leverages Supabase as the backend to store and manage your blog posts. The app includes a user-friendly Markdown editor that enables seamless writing and parsing of stored blogs.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Markdown Editor**: Write and edit your blog posts using a Markdown editor for a clean and efficient writing experience.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Supabase Backend**: Utilize the power of Supabase as the backend to store and manage your blog data. Supabase offers a scalable and flexible solution for your application's data needs.
 
-- Configure the top-level `parserOptions` property like this:
+- **Responsive Design**: Bloggy is designed to be responsive, ensuring a seamless user experience across various devices and screen sizes.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/FREDRICKKYEKI/Bloggy.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Install dependencies:
+
+```bash
+cd bloggy
+npm install
+```
+
+3. Set up Supabase:
+
+   - Create a Supabase project and obtain your API keys.
+   - Configure Supabase in your Bloggy app by updating the necessary environment variables or configuration files.
+
+4. Run the application:
+
+```bash
+npm start
+```
+
+Visit `http://localhost:3000` in your browser to view Bloggy.
+
+## Configuration
+
+- Update the Supabase configuration in the appropriate files to connect your app to your Supabase project.
+
+## Contributing
+
+Contributions are welcome! If you have any ideas, improvements, or bug fixes, feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+- Special thanks to the creators of the Markdown editor library used in this project.
+
+
+Happy blogging with Bloggy!
